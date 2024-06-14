@@ -1,0 +1,13 @@
+version: '3.9'
+services:
+  jupyter:
+    container_name: "jupter"
+    hostname: "jupter"
+    build:
+      context: ./chat_completion
+      dockerfile: Dockerfile
+    ports:
+    - "8888:8888"
+    
+    volumes:
+      - .:/code
