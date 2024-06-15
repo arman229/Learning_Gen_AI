@@ -1,0 +1,26 @@
+version: '3.9'
+services:
+  api_calling:
+   container_name: "api_calling"
+   hostname: "api_calling"
+   build:
+     context: ./microservices_1
+     dockerfile: Dockerfile
+   ports:
+   - "8000:8000"
+   
+   volumes:
+    - .:/code
+    
+  fun_calling:
+    container_name: "jupter"
+    hostname: "jupter"
+    build:
+      context: ./microservices_2
+      dockerfile: Dockerfile
+    ports:
+    - "8888:8888"
+    
+    volumes:
+      - .:/code
+  
