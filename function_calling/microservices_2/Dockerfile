@@ -5,7 +5,7 @@ WORKDIR /code
 
 RUN pip install poetry
 
-COPY . /code/
+COPY . /code
 
 RUN poetry config virtualenvs.create false \
     && poetry install --no-interaction --no-root
